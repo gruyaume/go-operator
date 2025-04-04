@@ -145,8 +145,6 @@ func (command Command) SecretInfoGet(id string, label string) (map[string]Secret
 		return nil, fmt.Errorf("failed to get secret info: %w", err)
 	}
 
-	// command.JujuLog(Warning, "SecretInfoGet output: %s", string(output))
-
 	var secretInfo map[string]SecretInfo
 
 	err = json.Unmarshal(output, &secretInfo)
